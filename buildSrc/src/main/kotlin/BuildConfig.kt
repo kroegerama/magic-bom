@@ -35,9 +35,9 @@ object BuildConfig {
     val pkgConfig = delegateClosureOf<BintrayExtension.PackageConfig> {
         with(C) {
             repo = "maven"
-            userOrg = USER_NAME
+            userOrg = USER_ID
 
-            name = PROJECT_NAME
+            name = "magic-bom"
             desc = PROJECT_DESCRIPTION
 
             setLicenses("Apache-2.0")
