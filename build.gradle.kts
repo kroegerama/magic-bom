@@ -13,12 +13,13 @@ dependencies {
     constraints {
         val kotlin = "1.4.21"
         val kotlinCoroutines = "1.4.2"
-        val androidGradlePlugin = "4.1.1"
-        val androidHiltPlugin = "2.30.1-alpha"
+        val androidGradlePlugin = "4.1.2"
+        val androidHiltPlugin = "2.31.2-alpha"
         val desugarLibs = "1.1.1"
 
         val xActivity = "1.2.0-rc01"
         val xAppcompat = "1.2.0"
+        val xBiometric = "1.1.0-rc01"
         val xBrowser = "1.3.0"
         val xConstraint = "2.0.4"
         val xCore = "1.3.2"
@@ -34,10 +35,10 @@ dependencies {
         val xSwiperefresh = "1.1.0"
         val xWork = "2.4.0"
 
-        val material = "1.3.0-beta01"
+        val material = "1.3.0-rc01"
         val timber = "4.7.1"
-        val kaiteki = "4.0.0"
-        val coil = "1.1.0"
+        val kaiteki = "4.0.1"
+        val coil = "1.1.1"
 
         val squareMoshi = "1.11.0"
         val squareOkHttp = "4.9.0"
@@ -59,14 +60,17 @@ dependencies {
         api("androidx.activity:activity:$xActivity")
         api("androidx.activity:activity-ktx:$xActivity")
         api("androidx.appcompat:appcompat:$xAppcompat")
+        api("androidx.biometric:biometric:$xBiometric")
         api("androidx.browser:browser:$xBrowser")
         api("androidx.constraintlayout:constraintlayout:$xConstraint")
+        api("androidx.core:core:$xCore")
         api("androidx.core:core-ktx:$xCore")
         api("androidx.exifinterface:exifinterface:$xExif")
         api("androidx.fragment:fragment:$xFragment")
         api("androidx.fragment:fragment-ktx:$xFragment")
 
         api("androidx.hilt:hilt-lifecycle-viewmodel:$xHilt")
+        api("androidx.hilt:hilt-work:$xHilt")
         api("androidx.hilt:hilt-compiler:$xHilt")
 
         api("androidx.lifecycle:lifecycle-viewmodel-ktx:$xLifecycle")
@@ -74,10 +78,13 @@ dependencies {
         api("androidx.lifecycle:lifecycle-runtime-ktx:$xLifecycle")
         api("androidx.lifecycle:lifecycle-common-java8:$xLifecycle")
         api("androidx.lifecycle:lifecycle-process:$xLifecycle")
+        api("androidx.lifecycle:lifecycle-service:$xLifecycle")
         api("androidx.lifecycle:lifecycle-viewmodel-savedstate:$xLifecycle")
 
         api("androidx.navigation:navigation-common:$xNavigation")
+        api("androidx.navigation:navigation-fragment:$xNavigation")
         api("androidx.navigation:navigation-fragment-ktx:$xNavigation")
+        api("androidx.navigation:navigation-ui:$xNavigation")
         api("androidx.navigation:navigation-ui-ktx:$xNavigation")
         api("androidx.navigation:navigation-safe-args-gradle-plugin:$xNavigation")
 
@@ -86,8 +93,14 @@ dependencies {
 
         api("androidx.preference:preference:$xPreference")
         api("androidx.recyclerview:recyclerview:$xRecycler")
+
         api("androidx.room:room-runtime:$xRoom")
+        api("androidx.room:room-compiler:$xRoom")
+        api("androidx.room:room-ktx:$xRoom")
+
         api("androidx.swiperefreshlayout:swiperefreshlayout:$xSwiperefresh")
+
+        api("androidx.work:work-runtime:$xWork")
         api("androidx.work:work-runtime-ktx:$xWork")
 
         //square
@@ -105,6 +118,7 @@ dependencies {
         api("com.kroegerama.android-kaiteki:core:$kaiteki")
         api("com.kroegerama.android-kaiteki:recyclerview:$kaiteki")
         api("com.kroegerama.android-kaiteki:retrofit:$kaiteki")
+        api("com.kroegerama.android-kaiteki:views:$kaiteki")
         api("io.coil-kt:coil:$coil")
 
         //utils
