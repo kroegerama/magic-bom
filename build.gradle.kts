@@ -37,7 +37,7 @@ dependencies {
 
         val material = "1.3.0-rc01"
         val timber = "4.7.1"
-        val kaiteki = "4.0.1"
+        val kaiteki = "4.0.2"
         val coil = "1.1.1"
 
         val squareMoshi = "1.11.0"
