@@ -144,8 +144,8 @@ publishing {
             setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
 
             credentials {
-                val nexusUsername: String by project
-                val nexusPassword: String by project
+                val nexusUsername: String? by project
+                val nexusPassword: String? by project
 
                 username = nexusUsername
                 password = nexusPassword
@@ -164,9 +164,9 @@ signing {
 }
 
 nexusStaging {
-    val nexusUsername: String by project
-    val nexusPassword: String by project
-    val nexusStagingProfileId: String by project
+    val nexusUsername: String? by project
+    val nexusPassword: String? by project
+    val nexusStagingProfileId: String? by project
 
     packageGroup = C.PROJECT_GROUP_ID
     stagingProfileId = nexusStagingProfileId
