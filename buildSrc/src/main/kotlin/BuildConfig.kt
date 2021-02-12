@@ -1,7 +1,5 @@
-import com.jfrog.bintray.gradle.BintrayExtension
 import org.gradle.api.Action
 import org.gradle.api.publish.maven.MavenPom
-import org.gradle.kotlin.dsl.delegateClosureOf
 
 object BuildConfig {
 
@@ -29,21 +27,6 @@ object BuildConfig {
                 connection.set("scm:git:$PROJECT_URL")
                 developerConnection.set("scm:git:https://www.github.com/kroegerama")
             }
-        }
-    }
-
-    val pkgConfig = delegateClosureOf<BintrayExtension.PackageConfig> {
-        with(C) {
-            repo = "maven"
-            userOrg = USER_ID
-
-            name = "magic-bom"
-            desc = PROJECT_DESCRIPTION
-
-            setLicenses("Apache-2.0")
-            vcsUrl = PROJECT_URL
-            setLabels(*PROJECT_TAGS)
-            publicDownloadNumbers = true
         }
     }
 }

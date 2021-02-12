@@ -6,27 +6,28 @@ version = C.PROJECT_VERSION
 plugins {
     `java-platform`
     `maven-publish`
-    id("com.jfrog.bintray")
+    signing
+    id("io.codearte.nexus-staging")
 }
 
 dependencies {
     constraints {
-        val kotlin = "1.4.21"
+        val kotlin = "1.4.30"
         val kotlinCoroutines = "1.4.2"
         val androidGradlePlugin = "4.1.2"
-        val androidHiltPlugin = "2.31.2-alpha"
+        val androidHiltPlugin = "2.32-alpha"
         val desugarLibs = "1.1.1"
 
-        val xActivity = "1.2.0-rc01"
+        val xActivity = "1.2.0"
         val xAppcompat = "1.2.0"
         val xBiometric = "1.1.0-rc01"
         val xBrowser = "1.3.0"
         val xConstraint = "2.0.4"
         val xCore = "1.3.2"
         val xExif = "1.3.2"
-        val xFragment = "1.3.0-rc02"
+        val xFragment = "1.3.0"
         val xHilt = "1.0.0-alpha03"
-        val xLifecycle = "2.2.0"
+        val xLifecycle = "2.3.0"
         val xNavigation = "2.3.3"
         val xPaging = "2.1.2"
         val xPreference = "1.1.1"
@@ -35,9 +36,8 @@ dependencies {
         val xSwiperefresh = "1.1.0"
         val xWork = "2.5.0"
 
-        val material = "1.3.0-rc01"
+        val material = "1.3.0"
         val timber = "4.7.1"
-        val kaiteki = "4.0.2"
         val coil = "1.1.1"
 
         val squareMoshi = "1.11.0"
@@ -115,35 +115,61 @@ dependencies {
         api("com.google.android.material:material:$material")
         api("com.jakewharton.timber:timber:$timber")
 
-        api("com.kroegerama.android-kaiteki:core:$kaiteki")
-        api("com.kroegerama.android-kaiteki:recyclerview:$kaiteki")
-        api("com.kroegerama.android-kaiteki:retrofit:$kaiteki")
-        api("com.kroegerama.android-kaiteki:views:$kaiteki")
         api("io.coil-kt:coil:$coil")
 
         //utils
         api("com.github.chuckerteam.chucker:library:$chucker")
+        api("com.github.chuckerteam.chucker:library-no-op:$chucker")
 
     }
 }
 
-bintray {
-    val bintrayUser: String by project
-    val bintrayApiKey: String by project
-
-    user = bintrayUser
-    key = bintrayApiKey
-
-    setPublications("maven")
-    pkg(BuildConfig.pkgConfig)
-}
+//fun property(propName: String, envName: String = propName): String? =
+//    findProperty(name)?.toString() ?: System.getenv(envName)
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
+        create<MavenPublication>("release") {
+            groupId = C.PROJECT_GROUP_ID
+            artifactId = C.PROJECT_ARTIFACT_ID
             version = C.PROJECT_VERSION
+
             from(components["javaPlatform"])
             pom(BuildConfig.pomAction)
         }
     }
+    repositories {
+        maven {
+            name = "sonatype"
+            setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+
+            credentials {
+                val nexusUsername: String by project
+                val nexusPassword: String by project
+
+                username = nexusUsername
+                password = nexusPassword
+            }
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications)
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    if (signingKey != null && signingPassword != null) {
+        useInMemoryPgpKeys(signingKey, signingPassword)
+    }
+}
+
+nexusStaging {
+    val nexusUsername: String by project
+    val nexusPassword: String by project
+    val nexusStagingProfileId: String by project
+
+    packageGroup = C.PROJECT_GROUP_ID
+    stagingProfileId = nexusStagingProfileId
+    username = nexusUsername
+    password = nexusPassword
 }
