@@ -1,6 +1,8 @@
 # Magic BOM
 Dependency versions for modern android applications
 
+![Publish](https://github.com/kroegerama/magic-bom/workflows/Publish/badge.svg)
+
 | Artifact | Version |
 |:-|:-:|
-| magic-bom | [ ![Download](https://api.bintray.com/packages/kroegerama/maven/magic-bom/images/download.svg) ](https://bintray.com/kroegerama/maven/magic-bom/_latestVersion) |
+| magic-bom | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.kroegerama/magic-bom/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.kroegerama/magic-bom)|
