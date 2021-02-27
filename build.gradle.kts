@@ -49,6 +49,7 @@ dependencies {
         //plugins
         api(kotlin("gradle-plugin", version = kotlin))
         api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines")
+        api("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutines")
         api("com.android.tools.build:gradle:$androidGradlePlugin")
         api("com.google.dagger:hilt-android-gradle-plugin:$androidHiltPlugin")
         api("com.google.dagger:hilt-android:$androidHiltPlugin")
