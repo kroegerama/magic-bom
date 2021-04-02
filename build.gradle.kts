@@ -7,7 +7,7 @@ plugins {
     `java-platform`
     `maven-publish`
     signing
-    id("io.codearte.nexus-staging")
+    id("io.github.gradle-nexus.publish-plugin") version "1.0.0"
 }
 
 dependencies {
@@ -167,13 +167,18 @@ signing {
     }
 }
 
-nexusStaging {
+nexusPublishing {
     val nexusUsername: String? by project
     val nexusPassword: String? by project
     val nexusStagingProfileId: String? by project
 
-    packageGroup = C.PROJECT_GROUP_ID
-    stagingProfileId = nexusStagingProfileId
-    username = nexusUsername
-    password = nexusPassword
+    packageGroup.set(C.PROJECT_GROUP_ID)
+
+    repositories {
+        sonatype {
+            stagingProfileId.set(nexusStagingProfileId)
+            username.set(nexusUsername)
+            password.set(nexusPassword)
+        }
+    }
 }
