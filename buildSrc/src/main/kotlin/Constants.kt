@@ -7,7 +7,7 @@ object C {
     const val PROJECT_NAME = "Magic BOM"
     const val PROJECT_DESCRIPTION = "Dependency versions for modern android applications"
 
-    const val PROJECT_VERSION = "1.1.6"
+    const val PROJECT_VERSION = "1.1.7"
     const val PROJECT_GROUP_ID = "com.kroegerama"
     const val PROJECT_ARTIFACT_ID = "magic-bom"
 

@@ -12,32 +12,32 @@ plugins {
 
 dependencies {
     constraints {
-        val kotlin = "1.4.32"
+        val kotlin = "1.5.0"
         val kotlinCoroutines = "1.4.3"
         val androidGradlePlugin = "4.2.0"
         val androidHiltPlugin = "2.35.1"
         val desugarLibs = "1.1.5"
 
-        val xActivity = "1.2.2"
+        val xActivity = "1.2.3"
         val xAppcompat = "1.2.0"
         val xAutofill = "1.1.0"
         val xBiometric = "1.1.0"
         val xBrowser = "1.3.0"
         val xConstraint = "2.0.4"
-        val xCore = "1.5.0-rc01"
+        val xCore = "1.5.0-rc02"
         val xExif = "1.3.2"
         val xFragment = "1.3.3"
-        val xHilt = "1.0.0-alpha03"
+        val xHilt = "1.0.0"
         val xLifecycle = "2.4.0-alpha01"
         val xNavigation = "2.3.5"
-        val xPaging = "3.0.0-rc01"
+        val xPaging = "3.0.0"
         val xPreference = "1.1.1"
         val xRecycler = "1.2.0"
         val xRoom = "2.3.0"
         val xSwiperefresh = "1.1.0"
         val xWork = "2.5.0"
 
-        val material = "1.4.0-alpha02"
+        val material = "1.4.0-beta01"
         val timber = "4.7.1"
         val coil = "1.2.1"
 
