@@ -13,20 +13,21 @@ plugins {
 dependencies {
     constraints {
         val kotlin = "1.5.0"
-        val kotlinCoroutines = "1.4.3"
-        val androidGradlePlugin = "4.2.0"
+        val kotlinCoroutines = "1.5.0"
+        val androidGradlePlugin = "4.2.1"
         val androidHiltPlugin = "2.35.1"
         val desugarLibs = "1.1.5"
+        val serializationJson = "1.2.1"
 
         val xActivity = "1.2.3"
-        val xAppcompat = "1.2.0"
+        val xAppcompat = "1.3.0"
         val xAutofill = "1.1.0"
         val xBiometric = "1.1.0"
         val xBrowser = "1.3.0"
         val xConstraint = "2.0.4"
-        val xCore = "1.5.0-rc02"
+        val xCore = "1.5.0"
         val xExif = "1.3.2"
-        val xFragment = "1.3.3"
+        val xFragment = "1.3.4"
         val xHilt = "1.0.0"
         val xLifecycle = "2.4.0-alpha01"
         val xNavigation = "2.3.5"
@@ -58,6 +59,9 @@ dependencies {
 
         api("com.android.tools:desugar_jdk_libs:$desugarLibs")
 
+        api(kotlin("plugin.serialization", version = kotlin))
+        api("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationJson")
+
         //androidX
         api("androidx.activity:activity:$xActivity")
         api("androidx.activity:activity-ktx:$xActivity")
@@ -72,9 +76,11 @@ dependencies {
         api("androidx.fragment:fragment:$xFragment")
         api("androidx.fragment:fragment-ktx:$xFragment")
 
-        api("androidx.hilt:hilt-lifecycle-viewmodel:$xHilt")
-        api("androidx.hilt:hilt-work:$xHilt")
+        api("androidx.hilt:hilt-common:$xHilt")
         api("androidx.hilt:hilt-compiler:$xHilt")
+        api("androidx.hilt:hilt-navigation:$xHilt")
+        api("androidx.hilt:hilt-navigation-fragment:$xHilt")
+        api("androidx.hilt:hilt-work:$xHilt")
 
         api("androidx.lifecycle:lifecycle-viewmodel-ktx:$xLifecycle")
         api("androidx.lifecycle:lifecycle-livedata-ktx:$xLifecycle")
