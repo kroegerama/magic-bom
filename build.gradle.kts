@@ -12,7 +12,7 @@ plugins {
 
 dependencies {
     constraints {
-        val kotlin = "1.5.0"
+        val kotlin = "1.5.10"
         val kotlinCoroutines = "1.5.0"
         val androidGradlePlugin = "4.2.1"
         val androidHiltPlugin = "2.35.1"
