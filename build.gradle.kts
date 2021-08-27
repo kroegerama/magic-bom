@@ -12,41 +12,41 @@ plugins {
 
 dependencies {
     constraints {
-        val kotlin = "1.5.10"
-        val kotlinCoroutines = "1.5.0"
-        val androidGradlePlugin = "4.2.1"
-        val androidHiltPlugin = "2.37"
+        val kotlin = "1.5.30"
+        val kotlinCoroutines = "1.5.1"
+        val androidGradlePlugin = "7.0.1"
+        val androidHiltPlugin = "2.38.1"
         val desugarLibs = "1.1.5"
-        val serializationJson = "1.2.1"
+        val serializationJson = "1.2.2"
 
-        val xActivity = "1.2.3"
-        val xAppcompat = "1.3.0"
+        val xActivity = "1.3.1"
+        val xAppcompat = "1.3.1"
         val xAutofill = "1.1.0"
         val xBiometric = "1.1.0"
         val xBrowser = "1.3.0"
-        val xConstraint = "2.0.4"
-        val xCore = "1.5.0"
-        val xExif = "1.3.2"
-        val xFragment = "1.3.5"
+        val xConstraint = "2.1.0"
+        val xCore = "1.6.0"
+        val xExif = "1.3.3"
+        val xFragment = "1.3.6"
         val xHilt = "1.0.0"
-        val xLifecycle = "2.4.0-alpha02"
+        val xLifecycle = "2.4.0-alpha03"
         val xNavigation = "2.3.5"
-        val xPaging = "3.0.0"
+        val xPaging = "3.0.1"
         val xPreference = "1.1.1"
         val xRecycler = "1.2.1"
         val xRoom = "2.3.0"
         val xSwiperefresh = "1.1.0"
         val xWork = "2.5.0"
 
-        val material = "1.4.0-rc01"
-        val timber = "4.7.1"
-        val coil = "1.2.2"
+        val material = "1.4.0"
+        val timber = "5.0.1"
+        val coil = "1.3.2"
 
         val squareMoshi = "1.12.0"
         val squareOkHttp = "4.9.1"
         val squareRetrofit = "2.9.0"
 
-        val chucker = "3.4.0"
+        val chucker = "3.5.2"
 
         //plugins
         api(kotlin("gradle-plugin", version = kotlin))
