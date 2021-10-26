@@ -7,15 +7,15 @@ plugins {
     `java-platform`
     `maven-publish`
     signing
-    id("io.github.gradle-nexus.publish-plugin") version "1.0.0"
+    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
 }
 
 dependencies {
     constraints {
         val kotlin = "1.5.31"
         val kotlinCoroutines = "1.5.2"
-        val androidGradlePlugin = "7.0.2"
-        val androidHiltPlugin = "2.38.1"
+        val androidGradlePlugin = "7.0.3"
+        val androidHiltPlugin = "2.39.1"
         val desugarLibs = "1.1.5"
         val serializationJson = "1.3.0"
 
@@ -29,18 +29,18 @@ dependencies {
         val xExif = "1.3.3"
         val xFragment = "1.3.6"
         val xHilt = "1.0.0"
-        val xLifecycle = "2.4.0-beta01"
+        val xLifecycle = "2.4.0-rc01"
         val xNavigation = "2.3.5"
         val xPaging = "3.0.1"
         val xPreference = "1.1.1"
         val xRecycler = "1.2.1"
         val xRoom = "2.3.0"
         val xSwiperefresh = "1.1.0"
-        val xWork = "2.6.0"
+        val xWork = "2.7.0"
 
         val material = "1.4.0"
         val timber = "5.0.1"
-        val coil = "1.3.2"
+        val coil = "1.4.0"
 
         val squareMoshi = "1.12.0"
         val squareOkHttp = "4.9.1"
